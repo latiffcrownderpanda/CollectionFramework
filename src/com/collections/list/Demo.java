@@ -2,12 +2,14 @@
  * List Interface Examples
  * It represents an ordered sequence of objects
  * List implementation classes :ArrayList, LinkedList, Vector, Stack 
+ * Both ArrayList and LinkedList are not synchronized, which means you can not share them between multiple threads without external synchronization.
  * @author bharat
  *
  */
 package com.collections.list;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Demo{
@@ -17,6 +19,9 @@ public class Demo{
 		 * ArrayList
 		 * 1.Elements can be iterated in order
 		 * 2.Allows null values in list
+		 * 3.ArrayList is implimented as Array
+		 * 4.Operations of get and set are faster as compare to LinkedList
+		 * 5.ArrayList grows 50% of its size each time
 		 */
 		List<String> lt = new ArrayList<String>();
 		 //1.append element at end of list
@@ -69,7 +74,19 @@ public class Demo{
 		}
 		//11.Collections.sort(lt); can not sort with null values
 		System.out.println("Sorted  List: " +lt.toString());
-	
+		
+		/**
+		 * LinkedList
+		 * 1.It is an ordered collection of Objects
+		 * 2.null values are allowed in LinkedList
+		 * 3.Performance is good for operation add remove compared to ArrayList
+		 */
+		List list = new LinkedList();
+		list.add(null);
+		list.add(null);
+		
+		System.out.println("LinkedList :"+list.toString());
+		
 	}
 	
 	
